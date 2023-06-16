@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Alegreya|Arima+Madurai|Dancing+Script|Dosis|Merriweather|Oleo+Script|Overlock|PT+Serif|Pacifico|Playball|Playfair+Display|Share|Unica+One|Vibur');
+
+/*Шапка*/
+.header {
+    width: 100%;
+    padding-top: 0px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: rgb(60, 136, 255);
+}
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    font-size: 40px;
+    font-weight: 700;
+    color: #fff;
+}
+
+/*Промо - надпись в шапке*/
+.promo__nadpis {
+    font-size: 36px;
+    text-align: center;
+    color: #fff;
+}
+
+
+.nav {
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.nav__link {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 10px;
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.1s linear;
+}
+
+.nav__link:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    transition: opacity 0.1s linear;
+}
+
+.nav__link:hover {
+    color: black;
+}
+
+.nav__link:hover:after {
+    opacity: 1;
+}
+
+.ramka {
+    margin-top: 90px;
+    height: auto;
+    width: auto;
+}
+
+.nadpis__verhu {
+    font-size: 30px;
+    text-align: center;
+}
+
+.nadpis__verhu__nizhe{
+    font-size: 30px;
+}
+
+.cartochka {
+    margin-right: 10%;
+    margin-left: 10%;
+    height: auto;
+
+}
+
+.inform {
+    font-size: 25px;
+    margin-right: 45%;
+    /* border-style: solid;
+     */
+}
+
+.vash__ekskurs {
+    font-size: 30px;
+}
+
+.ekskurs {
+    border-style: solid;
+    max-width: 300px;
+}
+
+
+/* Карточки */
+
+.product-wrapper {
+    display: block;
+    width: 100%;
+    height: 450px;
+    float: left;
+    transition: width .5s;
+}
+
+.card {
+    height: 300px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px; /* Ограничение ширины */
+    /*max-height: 450px; */ /*Ограничение по высоте*/
+    margin: auto;
+    text-align: center;
+    font-family: sans-serif;
+    background-color: #fff;
+}
+
+img {
+    width: 100%;
+}
+
+h3 {
+    color: #000;
+}
+
+p {
+    padding: 4px;
+    font-size: 14px;
+    color: #000;
+}
+
+.price {
+    color: #000;
+    font-size: 20px;
+}
+
+button {
+
+    border: none;
+    outline: 0;
+    padding: 10px;
+    color: #fff;
+    /*
+    background-color: #0aa8bd;
+     */
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.create_button {
+    background-color: mediumseagreen;
+    width: 40%;
+}
+.edit_button {
+    background-color: #837515;
+    width: 40%;
+}
+
+.prosmotr_button {
+    background-color: #0aa8bd;
+}
+
+.delete_button {
+    background-color: rgb(196, 30, 58);
+}
+
+
+@media only screen and (min-width: 450px) {
+    .product-wrapper {
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .product-wrapper {
+        width: 33.333%;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .product-wrapper {
+        width: 25%;
+    }
+}
+
+.product-wrapper button {
+    border-radius: 0px;
+}
+.parent-product-wrapper{
+    height: auto;
+    margin-bottom: 75%;
+}
+.otziv_button{
+    background-color: #FF8C00;
+}
+.otziv_form{
+
+}
+.spisok_review{
+    height: auto;
+}

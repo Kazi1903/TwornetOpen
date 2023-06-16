@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Alegreya|Arima+Madurai|Dancing+Script|Dosis|Merriweather|Oleo+Script|Overlock|PT+Serif|Pacifico|Playball|Playfair+Display|Share|Unica+One|Vibur');
+
+/*Шапка*/
+.header {
+    width: 100%;
+    padding-top: 0px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: rgb(60, 136, 255);
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    font-size: 40px;
+    font-weight: 700;
+    color: #fff;
+}
+
+/*Промо - надпись в шапке*/
+.promo__nadpis {
+    font-size: 36px;
+    text-align: center;
+    color: #fff;
+}
+
+
+.nav {
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.nav__link {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 10px;
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.1s linear;
+}
+
+.nav__link:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    transition: opacity 0.1s linear;
+}
+
+.nav__link:hover {
+    color: black;
+}
+
+.nav__link:hover:after {
+    opacity: 1;
+}
+
+.ramka {
+    margin-top: 90px;
+    width: auto;
+    height: auto;
+}
+
+.nadpis__verhu {
+    font-size: 30px;
+    text-align: center;
+}
+
+.cartochka {
+    margin-left: 10%;
+    margin-right: 10%;
+    border-style: solid;
+    background-color: rgb(245,237,218);
+}
+
+img.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+/*Фото карточек*/
+#img {
+    width: 500px;
+    cursor: pointer;
+}
+
+#img:focus {
+    width: 1200px;
+}
+
+.inform{
+    font-size: 30px;
+    margin-left: 10%;
+    margin-right: 10%;
+}

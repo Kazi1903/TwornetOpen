@@ -1,0 +1,408 @@
+
+@import url('https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Alegreya|Arima+Madurai|Dancing+Script|Dosis|Merriweather|Oleo+Script|Overlock|PT+Serif|Pacifico|Playball|Playfair+Display|Share|Unica+One|Vibur');
+
+body {
+    margin: 0;
+    font-family: 'Abel', sans-serif;;
+
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+/*Контейнер*/
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+/* Интро*/
+
+.intro {
+    width: 100%;
+    height: 130vh;
+
+    background-size: cover;
+}
+
+
+/*Шапка*/
+.header {
+    width: 100%;
+    padding-top: 0px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: rgb(60, 136, 255);
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    font-size: 40px;
+    font-weight: 700;
+    color: #fff;
+}
+
+/*Промо - надпись в шапке*/
+.promo__nadpis {
+    font-size: 36px;
+    text-align: center;
+    color: black;
+}
+
+/*Навигация*/
+.nav {
+    font-size: 18px;
+    text-transform: uppercase;
+
+}
+
+.nav__link {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 10px;
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.1s linear;
+}
+
+.nav__link:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+
+    /* background-color: #0aa8bd; */
+    background-color: white;
+    opacity: 0;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+
+    transition: opacity 0.1s linear;
+}
+
+.nav__link:hover {
+    /* color: #1d3486; */
+    /* color: #0aa8bd; */
+    color: black;
+}
+
+.nav__link:hover:after {
+    opacity: 1;
+}
+
+
+.button-64 {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: #008CBA;
+    color: white;
+    width: 100%;
+}
+
+.button-64:hover {
+    background-color: white;
+    color: black;
+}
+
+/*Поле поиска*/
+* {
+    box-sizing: border-box;
+}
+
+
+.poiskform {
+    position: relative;
+    width: 650px;
+    margin: 0 auto;
+    top: 150px;
+    align-items: center;
+}
+
+.poiskbutton {
+    border: none;
+    outline: none;
+    border-radius: 100px;
+
+    height: 36px;
+    width: 36px;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    background: rgb(58, 55, 202);
+    cursor: pointer;
+
+
+}
+
+.poiskbutton:before {
+    content: "\f002";
+    font-family: FontAwesome;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.vibor {
+    width: 13px;
+    height: 13px;
+}
+select{
+    height: 40px;
+    width: 280px;
+    font-size: 14px;
+}
+
+.select__class{
+    margin-left: 40px;
+}
+
+
+
+
+
+
+
+
+.checkselect {
+    position: relative;
+    display: inline-block;
+    min-width: 200px;
+    text-align: left;
+}
+.checkselect-control {
+    position: relative;
+    padding: 0 !important;
+}
+.checkselect-control select {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+    padding-left: 5px;
+    height: 30px;
+}
+.checkselect-over {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    cursor: pointer;
+}
+.checkselect-popup {
+    display: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    border: 1px solid #dadada;
+    border-top: none;
+    background: #fff;
+    z-index: 9999;
+    overflow: auto;
+    user-select: none;
+}
+.checkselect label {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 4px 6px 4px 25px;
+    font-weight: normal;
+    font-size: 1em;
+    line-height: 1.1;
+    cursor: pointer;
+}
+.checkselect-popup input {
+    position: absolute;
+    top: 5px;
+    left: 8px;
+    margin: 0 !important;
+    padding: 0;
+}
+.checkselect-popup label:hover {
+    background: #03a2ff;
+    color: #fff;
+}
+.checkselect-popup fieldset {
+    display: block;
+    margin:  0;
+    padding: 0;
+    border: none;
+}
+.checkselect-popup fieldset input {
+    left: 15px;
+}
+.checkselect-popup fieldset label {
+    padding-left: 32px;
+}
+.checkselect-popup legend {
+    display: block;
+    margin: 0;
+    padding: 5px 8px;
+    font-weight: 700;
+    font-size: 1em;
+    line-height: 1.1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+input {
+    width: 100%;
+    height: 42px;
+    background: #fff;
+    padding-left: 15px;
+    border-radius: 100px;
+    /*Новое можно удалить*/
+    border: none;
+    outline: none;
+    border-radius: 100px;
+}
+
+
+
+/* Карточки */
+
+.product-wrapper {
+    display: block;
+    width: 100%;
+    height: 450px;
+    float: left;
+    transition: width .5s;
+}
+
+.card {
+    height: 400px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px; /* Ограничение ширины */
+    /*max-height: 450px; */ /*Ограничение по высоте*/
+    margin: auto;
+    text-align: center;
+    font-family: sans-serif;
+    background-color: #fff;
+}
+
+img {
+    width: 100%;
+}
+
+h3 {
+    color: #000;
+}
+
+p {
+    padding: 4px;
+    font-size: 14px;
+    color: #000;
+}
+
+.price {
+    color: #000;
+    font-size: 20px;
+}
+
+.card button {
+
+    border: none;
+    outline: 0;
+    padding: 10px;
+    color: #fff;
+    /*
+    background-color: #0aa8bd;
+     */
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+.prosmotr_button{
+    background-color: #0aa8bd;
+}
+.delete_button{
+    background-color: red;
+}
+
+@media only screen and (min-width: 450px) {
+    .product-wrapper {
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .product-wrapper {
+        width: 33.333%;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .product-wrapper {
+        width: 25%;
+    }
+}
+
+.product-wrapper button {
+    border-radius: 0px;
+}
+
+.productsclearfix {
+
+    padding-top: 200px;
+}
+
+body {
+    background-color: #7dcbce;
+}
