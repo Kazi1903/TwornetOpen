@@ -1,34 +1,44 @@
 package com.example.twornet.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "comment")
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    Long id;
+    private Long id;
     @Column(name = "review")
-    String review;
+    private String review;
     @Column(name = "rating")
-    int rating;
+    private int rating;
     @Column(name = "name_of_created")
-    String nameOfCreated;
+    private String nameOfCreated;
+    @Column(name = "umor")
+    private int umor;
+    @Column(name = "marshrut")
+    private int marshrut;
+    @Column(name = "punktualnost")
+    private int punktualnost;
+    @Column(name = "opryatnost")
+    private int opryatnost;
+    @Column(name = "mestnost")
+    private int mestnost;
+    @Column(name = "beseda")
+    private int beseda;
 
     @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
     @JoinColumn
     private User user;
 
-    // private LocalDateTime dateOfCreated;
     @JoinColumn(name = "date_of_created")
     private String dateOfCreated;
 

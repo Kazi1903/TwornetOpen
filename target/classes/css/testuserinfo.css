@@ -188,3 +188,40 @@ textarea {
 .user_review_comment{
     font-size: 20px;
 }
+
+
+.rad {
+    position: relative;
+    top: 30px;
+   /* right: 64px; */
+    height: 20px;
+    width: 20px;
+}
+
+.rad1 {
+    position: relative;
+    top: 20px;
+    right: -25px;
+}
+
+.punkt{
+    font-size: 24px;
+
+}
+.kar_har{
+    height: 175px;
+    width: 175px;
+    position: relative;
+}
+
+.icon-otziv{
+    height: 20px;
+    width: 20px;
+}
+
+.icon-dostizh{
+    height: 60px;
+    width: 60px;
+    border-style: ridge;
+    border-color: gold;
+}

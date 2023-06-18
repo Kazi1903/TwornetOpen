@@ -18,8 +18,16 @@ public class ProductController {
 
     @GetMapping("/")
     public String products(@RequestParam(name = "title", required = false) String title,
-                           @RequestParam(name = "city", required = false) String city, Principal principal, Model model) {
-        model.addAttribute("products", productService.listProducts(title, city));
+                           @RequestParam(name = "city", required = false) String city,
+                           @RequestParam(name = "classification", required = false) String classification,
+                           @RequestParam(name = "umor", required = false) String umor,
+                           @RequestParam(name = "marshrut", required = false) String marshrut,
+                           @RequestParam(name = "punktualnost", required = false) String punktualnost,
+                           @RequestParam(name = "opryatnost", required = false) String opryatnost,
+                           @RequestParam(name = "mestnost", required = false) String mestnost,
+                           @RequestParam(name = "beseda", required = false) String beseda,
+                           Principal principal, Model model) {
+        model.addAttribute("products", productService.listProducts(title, city, classification, umor, marshrut, punktualnost, opryatnost, mestnost, beseda));
         model.addAttribute("user", productService.getUserByPrincipal(principal));
         model.addAttribute("cities", productService.citiesList());
         return "products";

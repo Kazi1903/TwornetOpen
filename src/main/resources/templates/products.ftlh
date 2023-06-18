@@ -3,6 +3,7 @@
 <head>
     <title>2RNET</title>
     <link type="text/css" href="/css/mainstyle.css" rel="stylesheet">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
@@ -74,6 +75,24 @@
 
                     </select>
                 </div>
+                <div>
+                <input class="rad" type="checkbox" name="umor" id="umor" value="1">
+                <label class="punkt" for="umor">Юмор</label>
+                <input class="rad" type="checkbox" name="marshrut" id="marshrut" value="1">
+                <label class="punkt" for="marshrut">Отличный маршрут</label>
+                <input class="rad" type="checkbox" name="punktualnost" id="punktualnost" value="1">
+                <label class="punkt" for="punktualnost">Пунктуальность</label>
+                </div>
+
+                <div>
+                <input class="rad" type="checkbox" name="opryatnost" id="opryatnost" value="1">
+                <label class="punkt" for="opryatnost">Опрятность</label>
+                <input class="rad" type="checkbox" name="mestnost" id="mestnost" value="1">
+                <label class="punkt" for="mestnost">Знание местности</label>
+                <input class="rad" type="checkbox" name="beseda" id="beseda" value="1">
+                <label class="punkt" for="beseda">Приятная беседа</label>
+                </div>
+
             </form>
         </div>
     </div>

@@ -26,6 +26,19 @@ public class InformUser {
     @Column(name="years_jobs")
     private String yearsJobs;
 
+    @Column(name="umor")
+    private double umor;
+    @Column(name="marshrut")
+    private double marshrut;
+    @Column(name ="punktualnost")
+    private double punktualnost;
+    @Column(name="opryatnost")
+    private double opryatnost;
+    @Column(name="mestnost")
+    private double mestnost;
+    @Column(name="beseda")
+    private double beseda;
+
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn
     private User user;

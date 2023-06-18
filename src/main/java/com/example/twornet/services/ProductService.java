@@ -1,10 +1,8 @@
 package com.example.twornet.services;
 
-import com.example.twornet.models.Cities;
-import com.example.twornet.models.Image;
-import com.example.twornet.models.Product;
-import com.example.twornet.models.User;
+import com.example.twornet.models.*;
 import com.example.twornet.repositories.CitiesRepository;
+import com.example.twornet.repositories.InformUserRepository;
 import com.example.twornet.repositories.ProductRepository;
 import com.example.twornet.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -23,19 +21,31 @@ public class ProductService {
     private final ProductRepository productRepository;
     private final UserRepository userRepository;
     private final CitiesRepository citiesRepository;
+    private final InformUserRepository informUserRepository;
 
     public List<Cities> citiesList() {
         return citiesRepository.findAll();
     }
 
-    public List<Product> listProducts(String title, String city) {
+    public List<Product> listProducts(String title, String city, String classification, String umor, String marshrut,
+                                      String punktualnost, String opryatnost, String mestnost, String beseda) {
 
-        if (title == null && city == null) {
+        if (title == null && city == null && classification == null) {
             return productRepository.findAll();
         }
 
-        if (title != "" && (city != "")) {
+        if (title != "" && city != "" && classification != "") {
+            return productRepository.findByTitleAndCityAndClassification(title, city, classification);
+        }
+
+        if (title != "" && city != "") {
             return productRepository.findByTitleAndCity(title, city);
+        }
+        if (title != "" && classification != "") {
+            return productRepository.findByTitleAndClassification(title, classification);
+        }
+        if (classification != "" && city != "") {
+            return productRepository.findByCityAndClassification(city, classification);
         }
 
         if (city != "" && city != null) {
@@ -44,7 +54,35 @@ public class ProductService {
         if (title != "") {
             return productRepository.findByTitle(title);
         }
+        if (classification != "") {
+            return productRepository.findByClassification(classification);
+        }
+        if (umor != null) {
+            InformUser informUser=informUserRepository.findInformUserByUmorGreaterThan(0.5);
+            return productRepository.findByUserId(informUser.getUser().getId());
+        }
+        if (marshrut != null) {
+            InformUser informUser=informUserRepository.findInformUserByMarshrutGreaterThan(0.5);
+            return productRepository.findByUserId(informUser.getUser().getId());
+        }
+        if (punktualnost != null) {
+            InformUser informUser=informUserRepository.findInformUserByPunktualnostGreaterThan(0.5);
+            return productRepository.findByUserId(informUser.getUser().getId());
+        }
+        if (opryatnost != null) {
+            InformUser informUser=informUserRepository.findInformUserByOpryatnostGreaterThan(0.5);
+            return productRepository.findByUserId(informUser.getUser().getId());
+        }
+        if (mestnost != null) {
+            InformUser informUser=informUserRepository.findInformUserByMestnostGreaterThan(0.5);
+            return productRepository.findByUserId(informUser.getUser().getId());
+        }
+        if (beseda != null) {
+            InformUser informUser=informUserRepository.findInformUserByBesedaGreaterThan(0.5);
+            return productRepository.findByUserId(informUser.getUser().getId());
+        }
         return productRepository.findAll();
+
     }//Search
 
     public void saveProduct(Principal principal, Product product, MultipartFile file1, MultipartFile file2, MultipartFile file3) throws IOException {
@@ -53,9 +91,9 @@ public class ProductService {
         Image image2;
         Image image3;
 
-            image1 = toImageEntity(file1);
-            image1.setPreviewImage(true);
-            product.addImageToProduct(image1);
+        image1 = toImageEntity(file1);
+        image1.setPreviewImage(true);
+        product.addImageToProduct(image1);
 
         if (file2.getSize() != 0) {
             image2 = toImageEntity(file2);

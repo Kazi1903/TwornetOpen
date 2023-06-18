@@ -82,6 +82,18 @@ public class UserController {
         return "redirect:/lk";
     }
 
+    @GetMapping(value = "/img/{imgFile}")
+    public @ResponseBody byte[] getImg(@PathVariable("imgFile") String imgFile) throws IOException {
+
+        InputStream in = getClass()
+                .getResourceAsStream("/img/" + imgFile);
+        try {
+            return in.readAllBytes();
+        } catch (Exception e) {
+            var error = new String("ERROR: img file (/img/" + imgFile + ") not found");
+            return error.getBytes();
+        }
+    }
     @GetMapping(value = "/css/{cssFile}")
     public @ResponseBody byte[] getFile(@PathVariable("cssFile") String cssFile) throws IOException {
 
@@ -94,7 +106,6 @@ public class UserController {
             return error.getBytes();
         }
     }
-
     @GetMapping(value = "/js/{jsFile}")
     public @ResponseBody byte[] getJsFile(@PathVariable("jsFile") String jsFile) throws IOException {
 
